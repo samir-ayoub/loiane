@@ -1,0 +1,38 @@
+<h1>
+  Bem-vindo ao condomínio Alto de Pinheiros
+</h1>
+
+<button (click)="onClickBtn()">Entrar</button>
+
+<input type="text" 
+  (keyup)="onKeyUp($event)"
+  (keyup.enter)="saveValue(inputElement.value)"
+  (blur)="saveValueOnBlur($event.target.value)"
+  maxlength="5"
+  #inputElement />
+
+<h2>Você deseja: {{ currentValue }}</h2>
+<h2>Você deseja: {{ savedValue }}</h2>
+<h2>Você deseja: {{ savedValueOnBlur }}</h2>
+
+
+<p 
+  (mouseover)="onMouseOverOut()"
+  (mouseout)="onMouseOverOut()"
+  >
+  passe o mouse sobre mim
+</p>
+
+<h3 [class.active]="mouseOverAnimate">i like you!</h3>
+
+<input [(ngModel)]="inputName" required>
+
+  <p> {{ inputName }} </p>
+
+  <app-telefones-uteis #estudoViewChild (mudouNumero)="onMudouNumero($event)" [cuurso]="contatosUteis" [telefoneZe]="telefone"></app-telefones-uteis>
+  
+  <h2>oieeee {{ mensagemAtualizou }}</h2>
+
+  <!-- <h2> {{valorEstudoViewChild}}</h2> -->
+
+  <input type="text" maxlength="10">

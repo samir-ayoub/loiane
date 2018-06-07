@@ -1,0 +1,7 @@
+<form class="mb-5">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Adicionar Curso</label>
+    <input #cursoInput type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira Curso">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="onAddCurso(cursoInput.value)">Criar</button>
+</form>
