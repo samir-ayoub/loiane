@@ -14,6 +14,8 @@ import { HighlightsDirective } from './shared/highlights.directive';
 import { CursosComponent } from './estudo-servicos/cursos/cursos.component';
 import { CursosService } from './services/cursos.service';
 import { CriarCursoComponent } from './estudo-servicos/criar-curso/criar-curso.component';
+import { EstudoPipeComponent } from './pipes/estudo-pipe/estudo-pipe.component';
+import { CamelCasePipe } from './pipes/camel-case.pipe';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { CriarCursoComponent } from './estudo-servicos/criar-curso/criar-curso.c
     DiretivasCustomizadasComponent,
     HighlightsDirective,
     CursosComponent,
-    CriarCursoComponent
+    CriarCursoComponent,
+    EstudoPipeComponent,
+    CamelCasePipe
   ],
   imports: [
     BrowserModule,

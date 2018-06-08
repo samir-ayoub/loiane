@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>
+    Estudo Pipes
+  </h1>
+  
+  <p>{{ item.titulo | uppercase | camelCase }}</p>
+  <p>{{ item.avaliacao | number:'1.1-1' }}</p>
+  <p>{{ item.paginas | number }}</p>
+  <p>{{ item.preco | currency: 'BRL': true }}</p>
+  <p>{{ item.lancamento | date:'dd-MM-yyyy'}}</p>
+  <p>{{ item.url }}</p>
+  
+</div>
