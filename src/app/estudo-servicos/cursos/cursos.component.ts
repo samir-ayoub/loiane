@@ -15,6 +15,12 @@ export class CursosComponent implements OnInit {
 
   ngOnInit() {
     this.cursos = this.cursosService.getCursos();
+
+    this.cursosService.emitirCursoCriado.subscribe(curso => console.log(curso));
+
+    // modo estatico, nao precisa instanciar. usar em níve global assim
+
+    CursosService.emitirStaticamenteCurso.subscribe(curso => console.log(`${curso} chamado no modo estático`));
   }
 
 }
