@@ -1,9 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// locale settings
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
 import { AppComponent } from './app.component';
+import { HomepageComponent } from './estudo-rotas/homepage/homepage.component';
 import { HomeComponent } from './home/home.component';
 import { TelefonesUteisComponent } from './telefones-uteis/telefones-uteis.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
@@ -16,7 +20,15 @@ import { CursosService } from './services/cursos.service';
 import { CriarCursoComponent } from './estudo-servicos/criar-curso/criar-curso.component';
 import { EstudoPipeComponent } from './pipes/estudo-pipe/estudo-pipe.component';
 import { CamelCasePipe } from './pipes/camel-case.pipe';
+import { LocaleSettingsService } from './pipes/locale-settings.service';
+import { FiltroArrayImpuroPipe } from './pipes/filtro-array-impuro.pipe';
+import { LoginComponent } from './estudo-rotas/login/login.component';
+import { routing } from './app.routing';
+import { ListaCursosComponent } from './estudo-rotas/lista-cursos/lista-cursos.component';
+import { CursoDetalheComponent } from './estudo-rotas/curso-detalhe/curso-detalhe.component';
 
+// locale settings
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -31,13 +43,28 @@ import { CamelCasePipe } from './pipes/camel-case.pipe';
     CursosComponent,
     CriarCursoComponent,
     EstudoPipeComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    FiltroArrayImpuroPipe,
+    LoginComponent,
+    HomepageComponent,
+    ListaCursosComponent,
+    CursoDetalheComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    routing
   ],
-  providers: [CursosService],
+  providers: [
+    CursosService,
+// locale settings
+    LocaleSettingsService,
+    {
+      provide: LOCALE_ID,
+      deps: [LocaleSettingsService],
+      useFactory: (settingsService) => settingsService.getLocale()
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,8 +6,42 @@
   <p>{{ item.titulo | uppercase | camelCase }}</p>
   <p>{{ item.avaliacao | number:'1.1-1' }}</p>
   <p>{{ item.paginas | number }}</p>
-  <p>{{ item.preco | currency: 'BRL': true }}</p>
+  <p>{{ item.preco | currency: 'BRL':true }}</p>
   <p>{{ item.lancamento | date:'dd-MM-yyyy'}}</p>
   <p>{{ item.url }}</p>
+  <p>{{ item | json }}</p>
   
+
+
+
+    <div class="form-group">
+      <label for="filter">Fitrar</label>
+      <input name="filtro" [(ngModel)]="filtro" type="text" class="form-control" placeholder="Insira livro">
+      <label for="exampleInputEmail1">Insira Livro</label>
+      <input #novoLivro type="text" class="form-control" placeholder="Insira livro">
+    </div>
+    <button class="btn btn-primary" (click)="addLivro(novoLivro.value)">Submit</button>
+  
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let livro of obterCurso()">
+      {{ livro }}
+    </li>
+  </ul>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2> {{ valorAsync | async }}</h2>
+  <h2> {{ valorAsync2 | async }}</h2>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
