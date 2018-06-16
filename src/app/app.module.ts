@@ -23,9 +23,13 @@ import { CamelCasePipe } from './pipes/camel-case.pipe';
 import { LocaleSettingsService } from './pipes/locale-settings.service';
 import { FiltroArrayImpuroPipe } from './pipes/filtro-array-impuro.pipe';
 import { LoginComponent } from './estudo-rotas/login/login.component';
-import { routing } from './app.routing';
+// import { routing } from './app.routing';
 import { ListaCursosComponent } from './estudo-rotas/lista-cursos/lista-cursos.component';
 import { CursoDetalheComponent } from './estudo-rotas/curso-detalhe/curso-detalhe.component';
+import { ListaCursosService } from './estudo-rotas/lista-cursos/listaCursos.service';
+import { CursoNaoEncontradoComponent } from './estudo-rotas/curso-nao-encontrado/curso-nao-encontrado.component';
+import { AppRoutingModule } from './estudo-rotas/app-routing.module';
+import { AlunosModule } from './estudo-rotas/alunos/alunos.module';
 
 // locale settings
 registerLocaleData(localePt);
@@ -49,14 +53,17 @@ registerLocaleData(localePt);
     HomepageComponent,
     ListaCursosComponent,
     CursoDetalheComponent,
+    CursoNaoEncontradoComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    AlunosModule,
+    AppRoutingModule,
   ],
   providers: [
     CursosService,
+    ListaCursosService,
 // locale settings
     LocaleSettingsService,
     {
