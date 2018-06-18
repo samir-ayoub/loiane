@@ -64,7 +64,7 @@ registerLocaleData(localePt);
   ],
   providers: [
     AuthService,
-    AuthGuard,,
+    AuthGuard,
     CursosGuard,
     CursosService,
     ListaCursosService,

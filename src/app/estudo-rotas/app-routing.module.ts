@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomepageComponent } from './homepage/homepage.component';
@@ -13,7 +12,7 @@ import { CursosGuard } from './guards/cursos.guard';
 
 const appRoutes: Routes = [
     { path: '', component: HomepageComponent, canActivate: [AuthGuard] },
-    { path: 'alunos', 
+    { path: 'alunos',
       loadChildren: 'app/estudo-rotas/alunos/alunos.module#AlunosModule',
       canActivate: [AuthGuard],
       canActivateChild: [CursosGuard]
