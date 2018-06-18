@@ -1,6 +1,6 @@
 
 <!-- estudo rotas -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav *ngIf="mostrarMenu" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" routerLink="">Estudo Rotas</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,9 +17,9 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/alunos">Alunos</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" [routerLink]="['curso', idCurso.value]" routerLinkActive="active">Cursos com id</a>
-        </li>
+        </li> -->
       </ul>
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -31,10 +31,10 @@
   <div class="container">
 
 
-    <div class="form-group mt-5 mb-5">
+    <!-- <div class="form-group mt-5 mb-5">
       <label for="exampleInputEmail1">Nome do curso</label>
       <input #idCurso type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome do Curso">
-    </div>  
+    </div>   -->
 
 
 

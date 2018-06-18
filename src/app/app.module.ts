@@ -29,7 +29,9 @@ import { CursoDetalheComponent } from './estudo-rotas/curso-detalhe/curso-detalh
 import { ListaCursosService } from './estudo-rotas/lista-cursos/listaCursos.service';
 import { CursoNaoEncontradoComponent } from './estudo-rotas/curso-nao-encontrado/curso-nao-encontrado.component';
 import { AppRoutingModule } from './estudo-rotas/app-routing.module';
-import { AlunosModule } from './estudo-rotas/alunos/alunos.module';
+import { AuthService } from './estudo-rotas/login/auth.service';
+import { AuthGuard } from './estudo-rotas/guards/auth-guard';
+import { CursosGuard } from './estudo-rotas/guards/cursos.guard';
 
 // locale settings
 registerLocaleData(localePt);
@@ -58,10 +60,12 @@ registerLocaleData(localePt);
   imports: [
     BrowserModule,
     FormsModule,
-    AlunosModule,
     AppRoutingModule,
   ],
   providers: [
+    AuthService,
+    AuthGuard,,
+    CursosGuard,
     CursosService,
     ListaCursosService,
 // locale settings
